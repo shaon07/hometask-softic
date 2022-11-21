@@ -1,0 +1,84 @@
+.row {
+}
+.card {
+  padding: 10px;
+}
+.authorBox {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.authorImage {
+  border-radius: 100px;
+}
+.author span {
+  font-weight: bold;
+  color: var(--primary);
+}
+.btnBox {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2px;
+}
+
+.card {
+  position: relative;
+  padding: 0;
+}
+
+.commentBoxWrapper {
+  background-color: white;
+  position: absolute;
+  bottom: 50px;
+  left: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px grey;
+  padding: 15px 10px;
+}
+.commentHeading {
+  border-bottom: 1px solid rgba(219, 207, 207, 0.616);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.commentHeading > h5 {
+  margin: 5px 0;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+.comment span {
+  padding: 2px 0;
+}
+
+.viewBtn {
+  margin-top: 5px;
+}
+
+.viewBtn > a {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.showComment > p {
+  font-weight: bold;
+}
+
+.showComment {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}

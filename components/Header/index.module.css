@@ -1,0 +1,10 @@
+.HeaderWrapper {
+  background-color: var(--primary);
+  padding: 10px;
+}
+.Brand {
+  color: white !important;
+  font-weight: bold;
+  margin: 0 !important;
+  cursor: pointer;
+}
