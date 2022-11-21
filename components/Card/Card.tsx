@@ -22,7 +22,6 @@ export default function Cards({ item }: CardType) {
     setIsComponentVisible: setShow,
   } = useComponentVisible(false);
   const { Meta } = Card;
-  const [loading, setLoading] = useState<Boolean>(true);
   const dispatch = useDispatch();
 
   const comments = useSelector((state: RootState) =>
@@ -49,14 +48,9 @@ export default function Cards({ item }: CardType) {
         })
         .then((res) => {
           setAuthor(res);
-          setLoading(false);
         });
     }
   }, [item]);
-
-  if (loading) {
-    return <h1>loading...</h1>;
-  }
 
   return (
     <Col span={6} className={`${styles.card}`}>
