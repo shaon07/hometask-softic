@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['os.alipayobjects.com'],
+    domains: ['os.alipayobjects.com','via.placeholder.com'],
   },
 }
 
