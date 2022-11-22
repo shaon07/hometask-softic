@@ -9,6 +9,25 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
+}
+
+.authorProfile {
+  position: absolute;
+  left: 1.5rem;
+  bottom: -20rem;
+  width: 15rem;
+  transition: 0.3s all;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.authorProfile a {
+  display: block;
+  color: var(--secondary);
+  font-weight: 400;
+  padding: 2px 0;
 }
 
 .authorInfo img {
@@ -20,16 +39,24 @@
   flex-direction: column;
 }
 
+
+
+
 .authorBody h5 {
   margin: 0;
   font-size: 18px;
   transition: 0.2s all;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .authorBody h5:hover {
   color: var(--primary);
 }
+
+
 
 .authorBody span {
   color: var(--secondary);
