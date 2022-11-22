@@ -1,0 +1,6 @@
+.FooterWrapper {
+  width: 100%;
+  background-color: var(--primary);
+  text-align: center;
+  padding: 15px 0;
+}
