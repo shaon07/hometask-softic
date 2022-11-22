@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import useComponentVisible from "../../hooks/useOutSideClick";
 import { RootState } from "../../redux/store";
 import { deletePost } from "../../redux/userSlice";
-import { authorType, postType } from "../../types";
+import { authorDetailType, authorType, postType } from "../../types";
 import styles from "./Card.module.css";
 
 type CardType = {
@@ -30,6 +30,7 @@ export default function Cards({ item }: CardType) {
   const posts = useSelector((state: RootState) => state.getUser.posts);
 
   const [author, setAuthor] = useState<authorType>({} as authorType);
+  const [authorDetail, setAuthorDetail] = useState<authorDetailType>({} as authorDetailType);
 
   const handleDelete = () => {
     const newPost = posts.filter((post) => post.id !== item.id);
@@ -48,6 +49,22 @@ export default function Cards({ item }: CardType) {
         })
         .then((res) => {
           setAuthor(res);
+        });
+    }
+  }, [item]);
+
+  useEffect(() => {
+    if (item) {
+      fetch(`https://jsonplaceholder.typicode.com/users/${item.id}`)
+        .then((res) => {
+          if (!res.ok) {
+            console.log("error to fetching");
+          } else {
+            return res.json();
+          }
+        })
+        .then((res) => {
+          setAuthorDetail(res);
         });
     }
   }, [item]);
@@ -76,7 +93,7 @@ export default function Cards({ item }: CardType) {
                 width={30}
                 height={30}
               />
-              <span>SHaon</span>
+              <span>{authorDetail?.name}</span>
             </div>
 
             <div>
@@ -110,7 +127,7 @@ export default function Cards({ item }: CardType) {
                 </div>
 
                 <div className={`${styles.viewBtn}`}>
-                  <Link href="#" legacyBehavior>
+                  <Link href={`/detail?id=${item.id}`} legacyBehavior>
                     <a>View All</a>
                   </Link>
                 </div>

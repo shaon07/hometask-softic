@@ -33,8 +33,6 @@ export default function Index() {
     }
   }, [data]);
 
-  console.log(comments)
-
   useEffect(() => {
     if (data) {
       fetch(`https://jsonplaceholder.typicode.com/users/${data.id}`)
@@ -67,8 +65,11 @@ export default function Index() {
                   <span>{authorDetail.email}</span>
                 </div>
               </div>
-              <h2>{data?.title}</h2>
-              <p>{data?.body}</p>
+
+              <div className={`${styles.post}`}>
+                <h2>{data?.title}</h2>
+                <p>{data?.body}</p>
+              </div>
 
               <Divider />
               <div className={`${styles.comments}`}>
