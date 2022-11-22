@@ -76,7 +76,7 @@ export default function Cards({ item }: CardType) {
         <Card
           hoverable
           className={`${styles.cards}`}
-          cover={<img src={author.url} alt="card" />}
+          cover={<img src={author.url} alt="card" loading="lazy" />}
         >
           <div className={`${styles.cardHeading}`}>
             <Link href={`/detail?id=${item.id}`}>
@@ -113,7 +113,7 @@ export default function Cards({ item }: CardType) {
             className={`${styles.showComment}`}
             onClick={() => setShow(true)}
           >
-            <p>View comments</p>
+            <p>View {comments.length} comments</p>
             <FaChevronRight />
           </div>
 
