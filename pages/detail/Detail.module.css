@@ -39,9 +39,6 @@
   flex-direction: column;
 }
 
-
-
-
 .authorBody h5 {
   margin: 0;
   font-size: 18px;
@@ -56,8 +53,6 @@
   color: var(--primary);
 }
 
-
-
 .authorBody span {
   color: var(--secondary);
 }
@@ -67,6 +62,12 @@
   padding: 10px 20px;
   border-radius: 5px;
   margin: 5px 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.commentUser:hover {
+  background-color: rgba(236, 236, 236, 0.863);
 }
 
 .comments h4 {

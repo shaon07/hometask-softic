@@ -29,7 +29,9 @@ export default function Cards({ item }: CardType) {
   const posts = useSelector((state: RootState) => state.getUser.posts);
 
   const [author, setAuthor] = useState<authorType>({} as authorType);
-  const [authorDetail, setAuthorDetail] = useState<authorDetailType>({} as authorDetailType);
+  const [authorDetail, setAuthorDetail] = useState<authorDetailType>(
+    {} as authorDetailType
+  );
 
   const handleDelete = () => {
     const newPost = posts.filter((post) => post.id !== item.id);
@@ -52,7 +54,6 @@ export default function Cards({ item }: CardType) {
     }
   }, [item]);
 
-
   useEffect(() => {
     if (item) {
       fetch(`https://jsonplaceholder.typicode.com/users/${item.userId}`)
@@ -69,7 +70,6 @@ export default function Cards({ item }: CardType) {
     }
   }, [item]);
 
-
   return (
     <Col xs={24} sm={12} md={8} lg={6} className={`${styles.card}`}>
       <Col className={`${styles.cardWrapper}`}>
@@ -82,7 +82,7 @@ export default function Cards({ item }: CardType) {
             <Link href={`/detail?id=${item.id}`}>
               <h4 className={`${styles.heading}`}>{item.title}</h4>
             </Link>
-            <p>{item.body.slice(0, 150)}</p>
+            <p className={`${styles.description}`}>{item.body.slice(0, 150)}</p>
           </div>
 
           <div className={`${styles.authorBox}`}>
@@ -109,7 +109,10 @@ export default function Cards({ item }: CardType) {
             </div>
           </div>
 
-          <div className={`${styles.showComment}`} onClick={() => setShow(true)}>
+          <div
+            className={`${styles.showComment}`}
+            onClick={() => setShow(true)}
+          >
             <p>View comments</p>
             <FaChevronRight />
           </div>

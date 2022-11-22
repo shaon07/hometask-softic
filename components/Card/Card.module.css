@@ -6,7 +6,6 @@
 }
 
 .cards {
-  height: 45rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -76,8 +75,14 @@
   align-items: center;
 }
 
-.commentHeading>h5 {
+.commentHeading > h5 {
   margin: 5px 0;
+}
+
+.cardHeading > p {
+  overflow: hidden;
+  height: 5rem;
+  padding: 10px 0;
 }
 
 .comment {
@@ -97,7 +102,7 @@
   margin-top: 5px;
 }
 
-.viewBtn>a {
+.viewBtn > a {
   color: var(--primary);
   font-weight: bold;
 }
@@ -108,10 +113,9 @@
 
 .showComment:hover p {
   color: var(--primary);
-
 }
 
-.showComment>p {
+.showComment > p {
   font-weight: bold;
 }
 
