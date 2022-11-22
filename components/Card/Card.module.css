@@ -6,7 +6,7 @@
 }
 
 .cards {
-  height: 45rem;
+  height: 47rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,6 +14,14 @@
 
 .cardWrapper {
   padding: 5px;
+}
+
+.heading {
+  transition: 0.2s linear;
+}
+
+.heading:hover {
+  color: var(--primary);
 }
 
 .authorBox {

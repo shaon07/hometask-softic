@@ -8,6 +8,7 @@ body {
 
 :root {
   --primary: #ff7e4fb8;
+  --secondary: #808080;
 }
 
 a {
@@ -17,15 +18,10 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.ant-card-meta-title {
-  transition: 0.2s linear;
-}
-
-.ant-card-meta-title:hover {
-  color: var(--primary);
-}
 
 /* @media (prefers-color-scheme: dark) {
   html {

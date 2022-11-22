@@ -60,7 +60,12 @@ export default function Cards({ item }: CardType) {
           className={`${styles.cards}`}
           cover={<img src={author.url} alt="card" />}
         >
-          <Meta title={item.title} description={item.body.slice(0, 150)} className={`${styles.cardHeading}`} />
+          <div className={`${styles.cardHeading}`}>
+            <Link href={`/detail?id=${item.id}`}>
+              <h4 className={`${styles.heading}`}>{item.title}</h4>
+            </Link>
+            <p>{item.body.slice(0, 150)}</p>
+          </div>
 
           <div className={`${styles.authorBox}`}>
             <div className={`${styles.author}`}>

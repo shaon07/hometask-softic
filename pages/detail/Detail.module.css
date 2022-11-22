@@ -1,0 +1,48 @@
+.detailWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.authorInfo img {
+  border-radius: 100px;
+}
+
+.authorBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorBody h5 {
+  margin: 0;
+  font-size: 18px;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+
+.authorBody h5:hover {
+  color: var(--primary);
+}
+
+.authorBody span {
+  color: var(--secondary);
+}
+
+.commentUser {
+  border: 1px solid var(--secondary);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.comments h4 {
+  font-size: 18px;
+  margin: 10px 0;
+}

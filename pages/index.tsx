@@ -25,12 +25,13 @@ export default function Home({ posts, comment }: propsType) {
 }
 
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const post = await fetch("https://jsonplaceholder.typicode.com/posts");
     const comments = await fetch(
       "https://jsonplaceholder.typicode.com/comments"
     );
+
     const postData = await post.json();
     const commentData = await comments.json();
 
