@@ -68,7 +68,6 @@ export default function Cards({ item }: CardType) {
         });
     }
   }, [item]);
-  console.log(authorDetail)
 
 
   return (

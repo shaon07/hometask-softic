@@ -18,6 +18,10 @@
 
 .heading {
   transition: 0.2s linear;
+  transition: 0.2s linear;
+  font-size: 18px;
+  height: 4rem;
+  overflow: hidden;
 }
 
 .heading:hover {

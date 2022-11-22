@@ -15,7 +15,9 @@ export default function Index() {
           </Link>
         </Col>
         <Col xs={24} md={18}>
-          <Title level={3} className={`${styles.Brand}`} style={{ textAlign: "end" }}> FROM MD SHAMIRUL ISLAM</Title>
+          <Col>
+            <Title level={5} className={`${styles.Brand}`} style={{ textAlign: "end" }}> FROM MD SHAMIRUL ISLAM | ALISHAON078@GMAIL.COM</Title>
+          </Col>
         </Col>
       </Row>
     </Col>
