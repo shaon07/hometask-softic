@@ -1,23 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
-import { Card, Col, Divider, Row } from 'antd';
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import { Card, Col, Divider, Row } from "antd";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { HiDotsHorizontal } from "react-icons/hi";
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import { authorDetailType, authorType } from '../../types';
-import styles from './Detail.module.css';
-
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { authorDetailType, authorType } from "../../types";
+import styles from "./Detail.module.css";
 
 export default function Index() {
-
   const router = useRouter();
   const id = Number(router.query.id);
-  const [data] = useSelector((state: RootState) => state.getUser.posts.filter(item => item.id === id))
-  const comments = useSelector((state: RootState) => state.getUser.comments.filter(item => item.postId === id))
+  const [data] = useSelector((state: RootState) =>
+    state.getUser.posts.filter((item) => item.id === id)
+  );
+  const comments = useSelector((state: RootState) =>
+    state.getUser.comments.filter((item) => item.postId === id)
+  );
   const [author, setAuthor] = useState<authorType>({} as authorType);
-  const [authorDetail, setAuthorDetail] = useState<authorDetailType>({} as authorDetailType);
-  const [showProfile, setShowProfile] = useState<Boolean>(false)
+  const [authorDetail, setAuthorDetail] = useState<authorDetailType>(
+    {} as authorDetailType
+  );
+  const [showProfile, setShowProfile] = useState<Boolean>(false);
 
   useEffect(() => {
     if (data) {
@@ -52,9 +56,9 @@ export default function Index() {
   }, [data]);
 
   const handleProfileShow = (e: React.MouseEvent<HTMLHeadingElement>) => {
-    e.stopPropagation()
-    setShowProfile(true)
-  }
+    e.stopPropagation();
+    setShowProfile(true);
+  };
 
   return (
     <Col onClick={() => setShowProfile(false)}>
@@ -68,31 +72,34 @@ export default function Index() {
               <div className={`${styles.authorInfo}`}>
                 <img src={author.url} alt="author" width={30} height={30} />
                 <div className={`${styles.authorBody}`}>
-                  <h5 onClick={handleProfileShow}>{authorDetail.name} <HiDotsHorizontal /></h5>
+                  <h5 onClick={handleProfileShow}>
+                    {authorDetail.name} <HiDotsHorizontal />
+                  </h5>
                   <span>{authorDetail.email}</span>
                 </div>
 
-                {
-                  showProfile && <div className={`${styles.authorProfile}`}>
+                {showProfile && (
+                  <div className={`${styles.authorProfile}`}>
                     <Card
                       className="space-align-block"
                       onClick={(e: React.MouseEvent<HTMLDivElement>) => {
                         e.stopPropagation();
-                        setShowProfile(true)
+                        setShowProfile(true);
                       }}
                       cover={<img src={author.url} alt="card" height={150} />}
                     >
-                      <h4>{authorDetail.name} <span>@{authorDetail.username}</span></h4>
+                      <h4>
+                        {authorDetail.name}{" "}
+                        <span>@{authorDetail.username}</span>
+                      </h4>
                       <h5>{authorDetail.email}</h5>
-                      <a>{authorDetail.phone.replace("x56442", '')}</a>
+                      <a>{authorDetail.phone.replace("x56442", "")}</a>
                       <a>{authorDetail.website}</a>
                       <a>from : {authorDetail.address.city}</a>
                     </Card>
                   </div>
-                }
+                )}
               </div>
-
-
 
               <div className={`${styles.post}`}>
                 <h2>{data?.title}</h2>
@@ -102,21 +109,19 @@ export default function Index() {
               <Divider />
               <div className={`${styles.comments}`}>
                 <h4>See all {comments.length} Comments</h4>
-                {
-                  comments.map((item, index) => {
-                    return (
-                      <div className={`${styles.commentUser}`} key={index}>
-                        <h3>{item.email}</h3>
-                        <p>{item.body}</p>
-                      </div>
-                    )
-                  })
-                }
+                {comments.map((item, index) => {
+                  return (
+                    <div className={`${styles.commentUser}`} key={index}>
+                      <h3>{item.email}</h3>
+                      <p style={{ padding: "5px 10px" }}>{item.body}</p>
+                    </div>
+                  );
+                })}
               </div>
             </Card>
           </Col>
         </div>
       </Row>
     </Col>
-  )
+  );
 }
