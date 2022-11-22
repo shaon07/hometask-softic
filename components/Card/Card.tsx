@@ -53,6 +53,7 @@ export default function Cards({ item }: CardType) {
     }
   }, [item]);
 
+
   useEffect(() => {
     if (item) {
       fetch(`https://jsonplaceholder.typicode.com/users/${item.id}`)
@@ -68,6 +69,8 @@ export default function Cards({ item }: CardType) {
         });
     }
   }, [item]);
+  console.log(authorDetail)
+
 
   return (
     <Col xs={24} sm={12} md={8} lg={6} className={`${styles.card}`}>

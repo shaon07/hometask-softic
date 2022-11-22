@@ -7,14 +7,16 @@ export default function Index() {
   return (
     <Col className={`${styles.HeaderWrapper}`}>
       <Row>
-        <Col span={6}>
+        <Col xs={24} md={6}>
           <Link href='/'>
             <Title level={3} className={`${styles.Brand}`}>
               HOMETASK
             </Title>
           </Link>
         </Col>
-        <Col span={18}>user Name</Col>
+        <Col xs={24} md={18}>
+          <Title level={3} className={`${styles.Brand}`} style={{ textAlign: "end" }}> FROM MD SHAMIRUL ISLAM</Title>
+        </Col>
       </Row>
     </Col>
   );

@@ -6,7 +6,7 @@
 }
 
 .cards {
-  height: 47rem;
+  height: 45rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
