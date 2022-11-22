@@ -76,6 +76,10 @@ export default function Index() {
                   showProfile && <div className={`${styles.authorProfile}`}>
                     <Card
                       className="space-align-block"
+                      onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                        e.stopPropagation();
+                        setShowProfile(true)
+                      }}
                       cover={<img src={author.url} alt="card" height={150} />}
                     >
                       <h4>{authorDetail.name} <span>@{authorDetail.username}</span></h4>
