@@ -9,6 +9,7 @@ type propsType = {
   posts: postType;
   comment: commentType;
 };
+
 export default function Home({ posts, comment }: propsType) {
   const dispatch = useDispatch();
 
@@ -22,6 +23,8 @@ export default function Home({ posts, comment }: propsType) {
   console.log(data);
   return <HomePage />;
 }
+
+
 export const getServerSideProps = async () => {
   try {
     const post = await fetch("https://jsonplaceholder.typicode.com/posts");

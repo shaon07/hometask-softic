@@ -19,6 +19,14 @@ a {
   box-sizing: border-box;
 }
 
+.ant-card-meta-title {
+  transition: 0.2s linear;
+}
+
+.ant-card-meta-title:hover {
+  color: var(--primary);
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

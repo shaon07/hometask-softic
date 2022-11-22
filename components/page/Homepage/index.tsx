@@ -11,12 +11,13 @@ export default function Index() {
     state.getUser.posts.slice(0, 20)
   );
 
+
   return (
     <div className="site-card-wrapper">
       <Row className={`${styles.row}`}>
-        {posts.map((item, index) => {
-          return <Cards item={item} key={index} />;
-        })}
+        {
+        posts.map((item, index) => <Cards item={item} key={index}  />)
+        }
       </Row>
     </div>
   );

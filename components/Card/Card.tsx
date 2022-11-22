@@ -53,65 +53,67 @@ export default function Cards({ item }: CardType) {
   }, [item]);
 
   return (
-    <Col span={6} className={`${styles.card}`}>
-      <Card
-        hoverable
-        className={`${styles.card}`}
-        cover={<img src={author.url} alt="card" />}
-      >
-        <Meta title={item.title} description={item.body} />
+    <Col xs={24} sm={12} md={8} lg={6} className={`${styles.card}`}>
+      <Col className={`${styles.cardWrapper}`}>
+        <Card
+          hoverable
+          className={`${styles.cards}`}
+          cover={<img src={author.url} alt="card" />}
+        >
+          <Meta title={item.title} description={item.body.slice(0, 150)} className={`${styles.cardHeading}`} />
 
-        <div className={`${styles.authorBox}`}>
-          <div className={`${styles.author}`}>
-            <img
-              className={`${styles.authorImage}`}
-              src={author.url}
-              alt="author"
-              width={30}
-              height={30}
-            />
-            <span>SHaon</span>
-          </div>
-
-          <div>
-            <Button
-              type="primary"
-              className={`${styles.btnBox}`}
-              onClick={handleDelete}
-            >
-              <BiTrash />
-              Delete
-            </Button>
-          </div>
-        </div>
-
-        <div className={`${styles.showComment}`} onClick={() => setShow(true)}>
-          <p>View comments</p>
-          <FaChevronRight />
-        </div>
-
-        {show && (
-          <div className={`${styles.commentBoxWrapper}`} ref={ref}>
-            <div className={`${styles.commentHeading}`}>
-              <h5>Comments</h5>
-              <FaChevronDown onClick={() => setShow(false)} />
+          <div className={`${styles.authorBox}`}>
+            <div className={`${styles.author}`}>
+              <img
+                className={`${styles.authorImage}`}
+                src={author.url}
+                alt="author"
+                width={30}
+                height={30}
+              />
+              <span>SHaon</span>
             </div>
-            <div className={`${styles.commentBox}`}>
-              <div className={`${styles.comment}`}>
-                {comments.slice(0, 3).map((item, index) => {
-                  return <span key={index}>{item.body}</span>;
-                })}
-              </div>
 
-              <div className={`${styles.viewBtn}`}>
-                <Link href="#" legacyBehavior>
-                  <a>View All</a>
-                </Link>
-              </div>
+            <div>
+              <Button
+                type="primary"
+                className={`${styles.btnBox}`}
+                onClick={handleDelete}
+              >
+                <BiTrash />
+                Delete
+              </Button>
             </div>
           </div>
-        )}
-      </Card>
+
+          <div className={`${styles.showComment}`} onClick={() => setShow(true)}>
+            <p>View comments</p>
+            <FaChevronRight />
+          </div>
+
+          {show && (
+            <div className={`${styles.commentBoxWrapper}`} ref={ref}>
+              <div className={`${styles.commentHeading}`}>
+                <h5>Comments</h5>
+                <FaChevronDown onClick={() => setShow(false)} />
+              </div>
+              <div className={`${styles.commentBox}`}>
+                <div className={`${styles.comment}`}>
+                  {comments.slice(0, 3).map((item, index) => {
+                    return <span key={index}>{item.body}</span>;
+                  })}
+                </div>
+
+                <div className={`${styles.viewBtn}`}>
+                  <Link href="#" legacyBehavior>
+                    <a>View All</a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+        </Card>
+      </Col>
     </Col>
   );
 }
