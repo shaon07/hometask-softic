@@ -21,7 +21,6 @@ export default function Cards({ item }: CardType) {
     isComponentVisible: show,
     setIsComponentVisible: setShow,
   } = useComponentVisible(false);
-  const { Meta } = Card;
   const dispatch = useDispatch();
 
   const comments = useSelector((state: RootState) =>
@@ -39,7 +38,7 @@ export default function Cards({ item }: CardType) {
 
   useEffect(() => {
     if (item) {
-      fetch(`https://jsonplaceholder.typicode.com/photos/${item.id}`)
+      fetch(`https://jsonplaceholder.typicode.com/photos/${item.userId}`)
         .then((res) => {
           if (!res.ok) {
             console.log("error to fetching");
@@ -56,7 +55,7 @@ export default function Cards({ item }: CardType) {
 
   useEffect(() => {
     if (item) {
-      fetch(`https://jsonplaceholder.typicode.com/users/${item.id}`)
+      fetch(`https://jsonplaceholder.typicode.com/users/${item.userId}`)
         .then((res) => {
           if (!res.ok) {
             console.log("error to fetching");

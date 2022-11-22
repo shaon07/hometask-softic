@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import HomePage from "../components/page/Homepage";
-import { RootState } from "../redux/store";
 import { comments, post } from "../redux/userSlice";
 import { commentType, postType } from "../types";
 
@@ -18,9 +17,7 @@ export default function Home({ posts, comment }: propsType) {
     dispatch(comments(comment));
   }, []);
 
-  const data = useSelector((state: RootState) => state.getUser);
 
-  console.log(data);
   return <HomePage />;
 }
 

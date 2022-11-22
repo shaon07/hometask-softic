@@ -21,7 +21,7 @@ export default function Index() {
 
   useEffect(() => {
     if (data) {
-      fetch(`https://jsonplaceholder.typicode.com/photos/${data.id}`)
+      fetch(`https://jsonplaceholder.typicode.com/photos/${data.userId}`)
         .then((res) => {
           if (!res.ok) {
             console.log("error to fetching");
@@ -37,7 +37,7 @@ export default function Index() {
 
   useEffect(() => {
     if (data) {
-      fetch(`https://jsonplaceholder.typicode.com/users/${data.id}`)
+      fetch(`https://jsonplaceholder.typicode.com/users/${data.userId}`)
         .then((res) => {
           if (!res.ok) {
             console.log("error to fetching");
