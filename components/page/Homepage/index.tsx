@@ -16,7 +16,7 @@ export default function Index() {
     <div className="site-card-wrapper">
       <Row className={`${styles.row}`}>
         {
-        posts.map((item, index) => <Cards item={item} key={index}  />)
+          posts.map((item, index) => <Cards item={item} key={index} />)
         }
       </Row>
     </div>
