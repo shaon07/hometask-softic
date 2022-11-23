@@ -47,7 +47,7 @@ export const getServerSideProps = async () => {
 
     return {
       props: {
-        posts: postData,
+        posts: postData.slice(0, 20),
         comment: commentData,
         error
       },

@@ -23,7 +23,6 @@ export interface userType {
   posts: [postType] | [];
 
   comments: [commentType] | [];
-  loading: boolean;
 }
 
 export type authorDetailType = {
