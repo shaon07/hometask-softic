@@ -24,12 +24,8 @@ a {
 }
 
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media(max-width:400px) {
+  .cardImage {
+    height: 14rem !important;
   }
-  body {
-    color: white;
-    background: black;
-  }
-} */
+}

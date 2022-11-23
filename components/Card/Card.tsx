@@ -76,7 +76,7 @@ export default function Cards({ item }: CardType) {
         <Card
           hoverable
           className={`${styles.cards}`}
-          cover={<img src={author.url} alt="card" loading="lazy" />}
+          cover={<img src={author.url} className="cardImage" alt="card" loading="lazy" />}
         >
           <div className={`${styles.cardHeading}`}>
             <Link href={`/detail?id=${item.id}`}>
