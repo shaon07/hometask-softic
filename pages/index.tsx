@@ -56,7 +56,7 @@ export const getServerSideProps = async () => {
     console.log(error);
     return {
       props: {
-        error
+        error: true
       }
     }
   }
