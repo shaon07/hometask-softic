@@ -61,13 +61,13 @@ export default function Index() {
   };
 
   return (
-    <Col onClick={() => setShowProfile(false)}>
+    <Col onClick={() => setShowProfile(false)} >
       <Row>
-        <div className={`${styles.detailWrapper}`}>
+        <div className={`${styles.detailWrapper} detailCardWrapper`}>
           <Col xs={24} md={24} lg={12}>
             <Card
               className="space-align-block"
-              cover={<img src={author.url} alt="card" height={500} />}
+              cover={<img src={author.url} className="cardDetailImage" alt="card" height={500} />}
             >
               <div className={`${styles.authorInfo}`}>
                 <img src={author.url} alt="author" width={30} height={30} />
@@ -102,7 +102,7 @@ export default function Index() {
               </div>
 
               <div className={`${styles.post}`}>
-                <h2>{data?.title}</h2>
+                <h2 className='cardHeading'>{data?.title}</h2>
                 <p>{data?.body}</p>
               </div>
 

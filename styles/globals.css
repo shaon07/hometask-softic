@@ -28,4 +28,17 @@ a {
   .cardImage {
     height: 14rem !important;
   }
+
+  .cardDetailImage {
+    height: 14rem !important;
+  }
+
+  .cardHeading {
+    font-size: 14px;
+    margin: 1rem 0;
+  }
+
+  .detailCardWrapper {
+    margin: 1rem !important;
+  }
 }
